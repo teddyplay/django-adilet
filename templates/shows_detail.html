@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ALL BOOKS DETAIL</title>
+</head>
+<body>
+<div>
+
+    <h2>Название:{{ book.title }}</h2>
+    <img src="{{ book.image.url }}" alt="">
+    <p>Описание:{{ book.description }}</p>
+    <p>Жанр:{{ book.genre }}</p>
+    <p>Продолжительность: {{ book.duration }}</p>
+
+</div>
+<div>
+    <h2>Комментарии:</h2>
+    <ul>
+        {% for i in book.book_comment.all %}
+            <li>
+                <p>{{ i.text }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Посты</title>
+</head>
+<body>
+<div>
+    <ul>
+
+        {% for i in post %}
+            <li>
+            <h2>{{ i.title }}</h2>
+            <p>{{ i.description }}</p>
+                <img src="{{ i.img.url }}" alt="">
+            </li>
+        {% endfor %}
+
+    </ul>
+</div>
+</body>
+</html>
