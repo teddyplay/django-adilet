@@ -1,10 +1,30 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Посты</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
 </head>
 <body>
+<div class="container">
+    <div class="row gy-5">
+        {% for post in post %}
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ post.img.url }}" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text"></p>
+                    <a href="{{ post.id }}/" class="btn btn-primary">Детально</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
 <div>
     <ul>
 
